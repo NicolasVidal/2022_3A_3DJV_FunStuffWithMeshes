@@ -29,6 +29,16 @@ namespace MeshBuilders
                 new Vector3(0.5f, 0.5f, 0.5f),
                 new Vector3(-0.5f, 0.5f, 0.5f),
                 new Vector3(-0.5f, -0.5f, 0.5f),
+                
+                new Vector3(-0.5f, -0.5f, -0.5f),
+                new Vector3(-0.5f, 0.5f, -0.5f),
+                new Vector3(0.5f, 0.5f, -0.5f),
+                new Vector3(0.5f, -0.5f, -0.5f),
+
+                new Vector3(0.5f, -0.5f, 0.5f),
+                new Vector3(0.5f, 0.5f, 0.5f),
+                new Vector3(-0.5f, 0.5f, 0.5f),
+                new Vector3(-0.5f, -0.5f, 0.5f),
             };
 
             mesh.uv = new[]
@@ -42,6 +52,16 @@ namespace MeshBuilders
                 new Vector2(0f, 1f),
                 new Vector2(1f, 1f),
                 new Vector2(1f, 0f),
+                
+                new Vector2(1f, 0f), // 8
+                new Vector2(0f, 0f), // 9
+                new Vector2(1f, 0f), // 10
+                new Vector2(0f, 0f), // 11
+                
+                new Vector2(0f, 1f), // 12
+                new Vector2(1f, 1f), // 13
+                new Vector2(0f, 1f), // 14
+                new Vector2(1f, 1f), // 15
             };
 
             mesh.triangles = new[]
@@ -52,11 +72,11 @@ namespace MeshBuilders
                 4, 5, 6,   // Back Face
                 4, 6, 7,
                 
-                1, 6, 2,  // Top Face
-                6, 5, 2,
+                1 + 8, 6 + 8, 2 + 8,  // Top Face
+                6 + 8, 5 + 8, 2 + 8,
                 
-                3, 4, 7, // Bottom Face
-                3, 7, 0,
+                3 + 8, 4 + 8, 7 + 8, // Bottom Face
+                3 + 8, 7 + 8, 0 + 8,
                 
                 3, 2, 5, // Right Face
                 3, 5, 4,
